@@ -5,6 +5,7 @@ namespace App\Http\Traits;
 
 use App\Models\File;
 use App\Models\Product;
+use App\Models\Publication;
 use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File as FileSystem;
@@ -42,6 +43,7 @@ trait UploadFile
 		$routes = [
 			User::class => 'images/users',
 			Product::class => 'images/products',
+			Publication::class => 'images/publications',
 		];
 		return $routes[get_class($model)] ?? 'images';
 	}
