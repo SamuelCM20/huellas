@@ -46,7 +46,7 @@ class PublicationController extends Controller
             $publication->save();
 
             if (!$Isfile) {
-                $file = new File(['route' => '/storage/images/images/default.jpeg']);
+                $file = new File(['route' => '/storage/images/publications/default.jpeg']);
                 $publication->file()->save($file);
             } else {
                 $this->uploadFile($publication, $request);

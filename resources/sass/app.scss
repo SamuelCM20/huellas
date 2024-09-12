@@ -63,6 +63,23 @@ body {
   .subtitle-main{
     color: $colorFour;
   }
+  footer{
+    background: $principalColor;
+  }
+
+  .button-success{
+    background-color: $principalButtonColor;
+    color: white;
+    font-size: 20px;
+    font-weight: bolder;
+  }
+
+  .button-success:hover{
+    background-color: white;
+    color: $principalButtonColor;
+    border: #D4C38E solid ;
+  }
+
 
   .carousel-indicators button{
     width: 2em !important;

@@ -37,7 +37,7 @@
                     </div>
                 </div>
                 <p class="card-text">{{ publication.description }}</p>
-                <img :src="publication.file && publication.file.route ? publication.file.route : '/storage/images/images/default.jpeg'" alt="Imagen por defecto" class="img-fluid mb-4">
+                <img :src="publication.file && publication.file.route ? publication.file.route : '/storage/images/publications/default.jpeg'" alt="Imagen por defecto" class="img-fluid mb-4">
                 <p><strong>Tipo animal:</strong> {{ publication.animal_type }} </p>
                 <p><strong>Raza:</strong>  {{ publication.breed }}</p>
                 <p><strong>Color:</strong> {{ publication.color }}</p>

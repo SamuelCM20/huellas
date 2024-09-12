@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg  navbar-light bg-light shadow-sm">
     <div class="container-fluid">
         <a class="navbar-brand" href="{{ url('/   ') }}">
-            <img src="/storage/images/images/logoPrincipalColor.png" alt="Logo" width="165" height="55"
+            <img src="{{asset('images/logoPrincipalColor.png')}}" alt="Logo" width="165" height="55"
                 class="d-inline-block align-text-top">
         </a>
 

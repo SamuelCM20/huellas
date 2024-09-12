@@ -133,7 +133,7 @@ export default {
             post: {},
             back_errors: {},
             file: null,
-            image_preview: '/storage/images/images/default.jpeg',
+            image_preview: '/storage/images/publications/default.jpeg',
         }
     },
     created() {
@@ -177,7 +177,7 @@ export default {
             this.$parent.post = {}
             this.back_errors
             this.file = null
-            this.image_preview = '/storage/images/images/default.jpeg'
+            this.image_preview = '/storage/images/publications/default.jpeg'
             document.getElementById("image").value = ''
             setTimeout(() => this.$refs.Form.resetForm(), 100)
         },

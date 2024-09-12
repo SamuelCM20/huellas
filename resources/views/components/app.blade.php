@@ -31,26 +31,8 @@
 		
 	</div>
 
-	<footer class="bg-body-tertiary text-center text-lg-start">
-		<!-- Copyright -->
-		<div id="footer-body" class="text-center p-3">
-			<div>
-				<a href="" class="text-body text-decoration-none">
-					<i class="fa-brands fa-linkedin text-light"></i>
-				</a>
-				<a href="" class="text-body text-decoration-none mx-5">
-					<i class="fa-brands fa-github text-light"></i>
-				</a>
-				<a href="" class="text-body text-decoration-none">
-					<i class="fa-brands fa-google text-light"></i>
-				</a>
-			
-			</div>
-
-			<p class="my-2">© 2020 Copyright: <span class="fst-italic">Samuel Caldon</span></p>  
-		</div>
-	  </footer>
-
-</body>
-<script src="{{ asset('js/localStorageUtils.js') }}"></script>
+	<x-footer />
+	
+	</body>
+	<script src="{{ asset('js/localStorageUtils.js') }}"></script>
 </html>

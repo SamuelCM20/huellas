@@ -65,3 +65,12 @@ export const deleteMessage = async () => {
 	})
 	return isConfirmed
 }
+
+export const noDisponible = async () => {
+	 await Swal.fire({
+		icon: 'warning',
+		title: '¡Espera!',
+		text:  'Perdón, esta función no está disponible en este momento.'
+			
+	})
+}

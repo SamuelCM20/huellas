@@ -1,9 +1,9 @@
 <x-app title="Home">
     <section>
 
-        <div class="row p-0 position-relative w-100 m-0">
+        <div class="row p-0 position-relative w-100 m-0" id="inicio">
 
-            <img src="/storage/images/images/bannerSinTexto.png" alt="banner"
+            <img src="{{asset('images/bannerSinTexto.png')}}" alt="banner"
                 class="banner-img position-relative img-fluid w-100 p-0 m-0">
 
 
@@ -15,7 +15,7 @@
             </div>
         </div>
 
-        <div class="row p-0 w-100 m-0 " style="background: #f0f0f0;">
+        <div class="row p-0 w-100 m-0 " style="background: #f0f0f0;" id="servicios">
 
             <div class="col-9 mt-5 w-100">
                 <h1 class="fw-bolder h4 mx-1">Servicios de la página</h1>
@@ -33,7 +33,7 @@
                             <div class="carousel-item active">
                                 <div class="row align-items-center justify-content-center gap-5">
                                     <div class="col-md-3 text-center">
-                                        <img src="/storage/images/images/iconopc.png" class="img-fluid" alt="Servicio 1"
+                                        <img src="{{asset('images/iconopc.png')}}" class="img-fluid" alt="Servicio 1"
                                             style="max-width: 300px;"> <!-- Ajusta el tamaño de la imagen -->
                                     </div>
                                     <div class="col-md-4">
@@ -48,7 +48,7 @@
                             <div class="carousel-item">
                                 <div class="row align-items-center justify-content-center gap-5">
                                     <div class="col-md-3 text-center">
-                                        <img src="/storage/images/images/iconopc.png" class="img-fluid" alt="Servicio 1"
+                                        <img src="{{asset('images/iconopc.png')}}" class="img-fluid" alt="Servicio 1"
                                             style="max-width: 300px;"> <!-- Ajusta el tamaño de la imagen -->
                                     </div>
                                     <div class="col-md-4">
@@ -63,7 +63,7 @@
                             <div class="carousel-item">
                                 <div class="row align-items-center justify-content-center gap-5">
                                     <div class="col-md-3 text-center">
-                                        <img src="/storage/images/images/iconopc.png" class="img-fluid" alt="Servicio 1"
+                                        <img src="{{asset('images/iconopc.png')}}" class="img-fluid" alt="Servicio 1"
                                             style="max-width: 300px;"> <!-- Ajusta el tamaño de la imagen -->
                                     </div>
                                     <div class="col-md-4">
@@ -88,13 +88,13 @@
                     </div>
                 </div>
 
-                <div class="row p-0 w-100 m-0 bg-light">
+                <div class="row p-0 w-100 m-0 bg-light" id="sobre-nosotros">
                     <div class="container py-5">
                         <div class="row align-items-center">
                             <!-- Imagen -->
                             <div class="col-lg-6 mb-4 mb-lg-0 d-flex justify-content-center">
-                                <img src="/storage/images/images/image-principal-2.jpg" class="img-fluid rounded shadow"
-                                    alt="Imagen descriptiva" style="max-width: 400px;">
+                                <img src="{{asset('images/image-principal-2.jpg')}}" class="img-fluid rounded shadow"
+                                    alt="Imagen descriptiva" style="width: 400px;">
                             </div>
 
                             <!-- Acordeón -->
@@ -174,9 +174,41 @@
                         </div>
                     </div>
                 
-                    <div class="row p-0 w-100 m-0 bg-light">
+                    <div class="row p-0 w-100 m-0 bg-light" id="contactanos">
+                        <div class="text-center my-2 d-flex flex-column align-items-center">
+                            <h2 class="subtitle-main text-uppercase">contáctanos</h2>
+                            <h3 class="title-main fs-2 w-75 fw-bold">Si quieres ponerte en contacto con nosotros hazlo a través del formulario de contacto</h3>
+                        </div>
+                
+                        <!-- Formulario e Imagen -->
+                        <div class="row justify-content-center align-items-center my-5">
+                            <!-- Formulario de contacto -->
+                            <div class="col-lg-4 col-md-6 col-12">
+                                <form id="contactForm">
+                                    <div class="mb-3">
+                                        <label for="name" class="form-label fs-4">Nombres y apellidos</label>
+                                        <input type="text" class="form-control shadow-sm" id="name" placeholder="Tu nombre y apellidos">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label fs-4">Correo electrónico</label>
+                                        <input type="email" class="form-control shadow-sm" id="email" placeholder="Tu correo electrónico">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="message" class="form-label fs-4">Mensaje</label>
+                                        <textarea class="form-control shadow-sm" id="message" rows="4" placeholder="Tu mensaje"></textarea>
+                                    </div>
+                                    <button type="submit" class="btn button-success w-100">Enviar</button>
+                                </form>
+                            </div>
+                
+                            <!-- Imagen de contacto -->
+                            <div class="col-lg-4 col-md-6 col-12 text-center mt-4 mt-lg-0">
+                                <img src="{{asset('images/imagen-principal-3.jpg')}}" class="img-fluid rounded shadow-lg" alt="Imagen de contacto" style="max-width: 300px;">
+                            </div>
+                        </div>
                         
                     </div> 
             
                 </section>
+
 </x-app>
