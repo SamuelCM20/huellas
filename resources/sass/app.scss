@@ -19,7 +19,113 @@
 
 
 body {
-    font-family: 'Inria Serif', serif;
+  font-family: "Inria Serif", serif;
+}
+.banner-img {
+  object-fit: cover;
+}
+.title-banner{
+  font-size: 100px; 
+  animation-delay: 1s  !important;
+} 
+
+.p-banner {
+  animation-delay: 2s !important;
 }
 
+.nav-link:not([href="#mi-cuenta"]){
+    color: $colorFour;
+    position: relative;
 
+}
+.nav-link:not([href="#mi-cuenta"]):hover {
+    color: $colorFour; 
+    text-decoration: none;
+  }
+  .nav-link:not([href="#mi-cuenta"])::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: $colorFour;
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s ease-in-out;
+  }
+  
+  .nav-link:not([href="#mi-cuenta"]):hover::after {
+    width: 100%;
+  }
+
+  .title-main{
+    color: $principalColor;
+  }
+  .subtitle-main{
+    color: $colorFour;
+  }
+
+  .carousel-indicators button{
+    width: 2em !important;
+    height: 2em !important;
+    background-color: #b9b9b9 !important;
+    border-radius: 50%;
+    margin: .2em .7rem !important;
+  }
+
+  .carousel-indicators .active{
+    background-color: #D4C38E !important;
+}
+  .carousel-item p{
+    color: $principalColor;
+  }
+
+
+  //----------------------------------------------------------------
+
+  @media (max-width: 768px) {
+    .banner-img {
+        height: 50vh; /* Aumenta la altura de la imagen en móviles para mayor impacto visual */
+        object-position: center center; /* Mantiene la parte derecha visible en móviles */
+    }
+
+    .title-banner {
+        font-size: 3.5rem !important; /* Ajusta tamaño del texto en móviles */
+    }
+
+    .text-banner{
+      width: 50% !important;
+      align-items: center !important;
+      justify-content: center !important;
+    } 
+
+    .p-banner {
+        font-size: 1rem; /* Ajusta tamaño del subtítulo en móviles */
+    }
+
+
+  }
+//----------------------------------------------------------------
+//Animations
+
+.animated-text {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+.nav-link-user .arrow-icon {
+  transition: transform 0.3s ease;
+}
+
+/* Cuando el menú está abierto, la flecha gira 180 grados */
+.nav-link-user[aria-expanded="true"] .arrow-icon {
+  transform: rotate(180deg);
+}

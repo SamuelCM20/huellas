@@ -19,8 +19,8 @@
 		<x-menu />
 
 		{{-- Content --}}
-		<main id="app" class="m-3">
-			<div class="container mt-4">
+		<main id="app" class="">
+			<div class="container">
 				<x-alerts />
 			</div>
 
