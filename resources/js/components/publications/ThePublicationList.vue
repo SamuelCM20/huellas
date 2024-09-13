@@ -1,19 +1,19 @@
 <template>
-    <div class="row justify-content-center">
-    <div class="col-md-3">
+    <div class="row justify-content-center mx-4">
+    <div class="col-md-3 my-4 user_content">
         <div class="card">
             <div class="card-body text-center">
-                <img src="" alt="Avatar" class="rounded-circle mb-3">
-                <h5 class="card-title">Fulanito Fernandez</h5>
-                <p class="card-text">0 Publicaciones</p>
+                <img :src="user.file.route" alt="Avatar" class="rounded-circle mb-3 shadow-sm" style="height: 150px; width: 150px;">
+                <h5 class="card-title fs-4">{{ user.full_name }}</h5>
+                <p class="card-text">{{ postcount }} publicaciones</p>
             </div>
         </div>
     </div>
-    <div class="col-md-7 scrollable-content">
+    <div class="col-md-7 scrollable-content my-4">
         <div class="card mb-3">
             <div class="card-header text-center">
                 <h1 class="h3">¿Necesitas ayuda para encontrar a tu mascota?</h1>
-                <button class="btn btn-primary" @click="openModal">¡Publica ahora!</button>
+                <button class="btn button-success" @click="openModal">¡Publica ahora!</button>
             </div>
         </div>
         <div class="card mb-3">
@@ -37,7 +37,7 @@
                     </div>
                 </div>
                 <p class="card-text">{{ publication.description }}</p>
-                <img :src="publication.file && publication.file.route ? publication.file.route : '/storage/images/publications/default.jpeg'" alt="Imagen por defecto" class="img-fluid mb-4">
+                <img :src="publication.file && publication.file.route ? publication.file.route : '/storage/images/publications/default.jpeg'" alt="Imagen por defecto" class="publication-img img-fluid mb-4">
                 <p><strong>Tipo animal:</strong> {{ publication.animal_type }} </p>
                 <p><strong>Raza:</strong>  {{ publication.breed }}</p>
                 <p><strong>Color:</strong> {{ publication.color }}</p>
@@ -58,7 +58,7 @@ import { deleteMessage } from '@/helpers/Alert.js';
 
 export default {
     components: {postModal},
-    props: ['publications'],
+    props: ['publications','user','postcount'],
     data() {
         return {
             modal: null,
@@ -70,6 +70,7 @@ export default {
     },
     methods: {
         async index() {
+            console.log(this.publications.id)
 			const modal_id = document.getElementById('post_modal')
 			this.modal = new bootstrap.Modal(modal_id)
 			modal_id.addEventListener('hidden.bs.modal', e => {

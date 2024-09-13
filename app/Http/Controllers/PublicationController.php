@@ -6,6 +6,7 @@ use App\Http\Requests\PublicationRequest;
 use App\Http\Traits\UploadFile;
 use App\Models\File;
 use App\Models\Publication;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -16,8 +17,12 @@ class PublicationController extends Controller
 
     public function index(Request $request)
     {
+        $user = Auth::user();
+        $user = User::with('file')->find($user->id);
+        $user->full_name = $user->full_name;
+        $postCount = Publication::where('user_id',$user->id)->count();
         $publications = Publication::with('user.file', 'file')->get();
-        if (!$request->ajax()) return view("publications.index",compact('publications'));
+        if (!$request->ajax()) return view("publications.index",compact('publications','user','postCount'));
         return response()->json(['publications' => $publications], 200);
     }
 

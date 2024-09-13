@@ -13,7 +13,8 @@
 </head>
 <body class="cuerpo">
 
-	<div class="bg" style="flex-direction: column; min-height: 100vh;">
+	<div class="bg" style="flex-direction: column;">
+		{{-- min-height: 100vh; --}}
 
 		{{-- Menu --}}
 		<x-menu />
