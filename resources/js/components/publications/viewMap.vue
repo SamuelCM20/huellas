@@ -1,16 +1,16 @@
 <template>
-    <div class="container mt-4">
+    <div class="container my-4">
       <!-- Mapa -->
-      <div class="row mb-3">
-        <div class="col-12">
-          <div id="map" style="height: 400px;"></div>
+      <div class="row mb-3rounded">
+        <div class="col-12 ">
+          <div id="map" class="shadow" style="height: 400px;"></div>
         </div>
       </div>
   
       <!-- Botón para volver -->
       <div class="row">
-        <div class="col-12">
-          <button @click="goBack" class="btn btn-primary">Volver a la página de publicaciones</button>
+        <div class="col-12 my-2">
+          <button @click="goBack" class="btn btn-secondary w-100">Volver a la página de publicaciones</button>
         </div>
       </div>
     </div>
