@@ -65,7 +65,7 @@
 							<div class="col-12 mt-2">
 								<label for="shipping_cost">Costo de envio</label>
 								<Field name="shipping_cost" v-slot="{ errorMessage, field}" v-model="product.shipping_cost">
-									<input type="text" id="shipping_cost" v-model="product.shipping_cost" :class="`form-control ${errorMessage ? 'is-invalid' : ''}`" v-bind="field">
+									<input type="text" id="shipping_cost" v-model="product.shipping_cost" :class="`form-control ${errorMessage ? 'is-invalid' : ''}`" v-bind="field" placeholder="Da un costo para el envio(opcional)">
 									<span class="invalid-feedback">{{errorMessage}}</span>
 									<span class="invalid-feedback">{{ back_errors['shipping_cost'] }}</span>
 
@@ -146,7 +146,7 @@ export default {
 				name: yup.string("El nombre debe ser una cadena de caracteres").required("El nombre es requerido").max(50,"El nombre debe tener menos de 50 caracteres"),
 				details: yup.string("los detalles debe ser una cadena de caracteres").required("Los detalles son requerido").max(50,"Los detalles no deben tener mas de 50 caracteres"),
 				price: yup.number("El precio debe ser valido").required("El precio es requerido").typeError('El precio debe ser un número válido.'),
-				shipping_cost: yup.number("El costo de envio debe ser valido").required("El costo de envio es requerido").typeError('El costo de envío debe ser un número válido.'),
+				shipping_cost: yup.number("El costo de envio debe ser valido").typeError('El costo de envío debe ser un número válido.'),
 				description: yup.string("La descripcion debe ser una cadena de caracteres").min(10,"La descripción debe tener almenos 10 caracteres").max(100,"La descripcion no puede superar los 100 caracteres"),
 				stock: yup.number("El stock no es valido").required("El stock es requerido"),
 				category: yup.number().required("La categoria es requerida"),

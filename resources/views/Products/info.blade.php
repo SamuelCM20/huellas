@@ -1,6 +1,6 @@
 <x-app title="{{$product->name}}">
     <section>
-        <div class="container py-2 ">
+        <div class="products_container">
 
             <show-product :product ="{{ $product }}" :session="{{ $session }}" user="{{ Auth::user() }}" />
             

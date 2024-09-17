@@ -17,6 +17,17 @@ export const deleteObject = idProduct => { //borrar 1 elemento del localstorage
 	localStorage.removeItem(idProduct)
 }
 
+export const cleanObjects = user_id => {
+	for (let i = localStorage.length - 1; i >= 0; i--) {
+        const key = localStorage.key(i);
+
+        // Si la clave pertenece a los productos del usuario
+        if (key.startsWith(`${user_id}-`)) {
+            localStorage.removeItem(key);
+        }
+    }
+}
+
 export const addObject = (key, obj) => {
 	localStorage.setItem(key, JSON.stringify(obj))
 }
@@ -41,9 +52,7 @@ export const addTotal = user_id => {
 
 			
 			total += obj.subtotal
-			if (total < 100) {
-				total += obj.shipping_cost
-			}
+
 		}
 	}
 	let key = `${user_id}-invoiceTotal`

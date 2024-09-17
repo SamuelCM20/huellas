@@ -1,11 +1,14 @@
 <x-app title="Registrate">
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+<div class="ContainerPrimary">
+    <div class="d-flex justify-content-center p-5">
+        <div class="col-md-6">
             <div class="card">
-                <div class="card-header">{{ __('Registro') }}</div>
-
+                <div class="text-center">
+                    <img src="{{asset('images/iconoCirculoVerde.png')}}" alt="Logo" class="my-3" style="width: 80px;">
+                </div>
                 <div class="card-body">
+                    <h3 class="text-center mb-4">{{ __('Registro') }}</h3>
+
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
                         <div class="row mb-3 d-flex">
@@ -125,7 +128,7 @@
 
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary" id="register-btn" disabled>
+                                <button type="submit" class="btn button-success w-100 mb-3" id="register-btn" disabled>
                                     {{ __('Registrar') }}
                                 </button>
                             </div>

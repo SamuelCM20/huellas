@@ -1,11 +1,10 @@
-<x-app title="permisos denegados">
+<x-app title="Ruta no valida">
     <section class="ContainerPrimary p-3">
         <div class="card p-5 m-5">
             <div class="card-body d-flex justify-content-center flex-wrap">
                 <img src="{{asset('images/sorry.png')}}" alt="no-disponible" class="rounded-circle img-fluid w-25">
                 <div class="w-100 d-flex justify-content-center flex-wrap my-4">
-
-                    <h1>403 No tiene permisos suficientes </h1>
+                    <h1>405 - Esta ruta no esta permitida o es incorrecta.</h1>
                 </div>
                 <a href="/" class="btn button-success">Volver al inicio</a>
             </div>

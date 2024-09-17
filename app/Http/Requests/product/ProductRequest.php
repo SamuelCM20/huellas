@@ -48,7 +48,6 @@ class ProductRequest extends FormRequest
             'price.numeric' => 'El precio del producto debe ser un número',
             'price.digits_between' => 'El precio del producto debe tener entre 1 y 10 dígitos',
             'price.regex' => 'El precio del producto debe ser un número con exactamente 10 dígitos',
-           'shipping_cost.required' => 'El costo de envío es requerido',
            'shipping_cost.numeric' => 'El costo de envío debe ser un número',
            'shipping_cost.digits_between' => 'El costo de envío debe tener entre 1 y 10 dígitos',
            'shipping_cost.regex' => 'El costo de envío debe ser un número con exactamente 10 dígitos',

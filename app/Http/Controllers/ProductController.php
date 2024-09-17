@@ -46,6 +46,7 @@ class ProductController extends Controller
         try {
             DB::beginTransaction();
             $product = new Product($request->all());
+            if(!$product->shipping_cost) $product->shipping_cost = 0;
             $product->save();
             if (!$Isfile) {
                 $file = new File(['route' => '/storage/images/products/default.png']);
