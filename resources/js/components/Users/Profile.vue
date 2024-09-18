@@ -1,22 +1,42 @@
 <template>
-	<div class="container my-5">
+	<div class="ContainerPrimary p-5">
 		<div class="row justify-content-center">
 			<!-- Tarjeta de perfil -->
 			<div class="col-lg-5 mb-4">
-				<div class="card text-center">
+				<div class="card text-center shadow">
 					<div class="card-body p-4"> <!-- Espaciado ajustado en la tarjeta de perfil -->
 						<img :src="users.file.route" alt="Foto de perfil"
 							class="rounded-circle img-fluid mb-3" style="height: 80px; width: 80px;">
 						<h2 class="card-title">{{ users.full_name }}</h2>
 						<hr> <!-- Línea horizontal debajo del nombre -->
-						<h5 class="text-start">Información Básica</h5>
-						<div class="text-start mt-3">
-							<p><strong>Cédula:</strong> {{users.number_id}}</p>
-							<p><strong>Dirección:</strong>{{ users.address }}</p>
-							<p><strong>Celular:</strong> {{ users.phone }}</p>
-							<p><strong>Correo Electrónico:</strong> {{ users.email }}</p>
+						<h5 class="text-start fw-bold">Información Básica</h5>
+						<div class="row text-start mt-3">
+							<div class="col-5">
+								<strong>Cédula:</strong> 
+							</div>
+							<div class="col-5">
+								<p>{{users.number_id}}</p>
+							</div>
+							<div class="col-5">
+								<strong>Dirección:</strong>
+							</div>
+							<div class="col-5">
+								<p>{{ users.address }}</p>
+							</div>
+							<div class="col-5">
+								<strong>Celular:</strong>
+							</div>
+							<div class="col-5">
+								<p>{{ users.phone }}</p>
+							</div>
+							<div class="col-5">
+								<strong>Correo Electrónico:</strong>
+							</div>
+							<div class="col-5">
+								<p> {{ users.email }}</p>
+							</div>
 						</div>
-						<button type="button" class="btn btn-warning mt-3" @click="editInfo(users)">Editar Perfil</button>
+						<button type="button" class="btn button-success mt-3" @click="editInfo(users)">Editar Perfil</button>
 					</div>
 				</div>
 			</div>
@@ -28,6 +48,9 @@
 						<h3 class="card-title">Mis publicaciones</h3>
 						<!-- Contenedor con scroll -->
 						<div class="overflow-auto" style="height: 400px; max-height: 400px;">
+							<div v-if="!post.length > 0" class="text-center">
+                    			<p class="fs-5 my-5">No tienes ninguna publicación realizada en el momento</p>
+                			</div>
 							<div v-for="p in post" :key="p.id"
 								class="d-flex align-items-center p-3 bg-white rounded shadow-sm mb-3">
 								<img :src="p.file.route" class="rounded img-fluid me-3"

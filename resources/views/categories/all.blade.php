@@ -4,21 +4,20 @@
 		<div class="d-flex align-items-center justify-content-center">
 			<h1 class="h2 m-3">Todo acerca de {{ $category->name }}</h1>
 		</div>
-		<div class="d-flex flex-wrap justify-content-center">
+		<div class="row justify-content-start gx-1 gy-2 m-3"> 
 		 	@foreach ($products as $product)
-					<a href="{{route('products.info',$product->id)}}" class="text-decoration-none text-reset">
-						<div class="card mx-2 my-2" style="width: 15rem; height: 29rem;">
-							<img src="{{$product->file->route}}" class="card-img-top" alt="imagen-producto" width="150" height="250">
-							<div class="card-body">
-								<h2 class="card-title h5"><b>{{ $product->name }}</b></h2>
-								<p class="card-text">{{ $product->details }}.</p>
-								<h3 class="card-text">${{ $product->price }}.</h3>
-							</div>
-							<div class="card-footer d-flex m-auto">
-								<p class="cart-text">Ver mas</p>
-							</div>
+			 <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-2">
+				<a href="{{route('products.info', $product->id)}}" class="text-decoration-none text-reset">
+					<div class="card shadow-sm h-100" style="max-width: 180px;">
+						<img src="{{ $product->file->route }}" class="card-img-top img-fluid" alt="imagen-producto" style="object-fit: cover; height: 150px;">
+						<div class="card-body text-center">
+							<h2 class="card-title h6 fw-bold product-title">{{ $product->name }}</h2>
+							<p class="card-text product-details" style="font-size: 0.9rem;">{{ $product->details }}.</p>
+							<h3 class="card-text fs2">${{ $product->price }}.</h3>
 						</div>
-					</a>
+					</div>
+				</a>
+			</div>
 			@endforeach
 		</div> 
 	</div>

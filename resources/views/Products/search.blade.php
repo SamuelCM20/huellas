@@ -1,4 +1,6 @@
 <x-app title="Resultados para {{$query}}">
+
+	<menuShop />
 	<div class="my-3">
 		<div class="m-3">
 			<h1 class="h3">{{$query}}</h1>

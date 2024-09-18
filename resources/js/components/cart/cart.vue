@@ -5,7 +5,7 @@
 					<h1 class="h1 m-2">Carrito</h1>
 					<a href="#" class="text-primary mx-3" @click="cleanCart(user_data.id)">Vaciar carrito</a>
 				<hr>
-                <div class="card-body mt-2">
+                <div class="card-body mt-2 overflow-auto" style="max-height: 350px;">
 					<div v-if="!products.length > 0" class="card-body mt-2 text-center">
                     	<p class="fw-bold fs-5">El carrito está vacío</p>
                 	</div>

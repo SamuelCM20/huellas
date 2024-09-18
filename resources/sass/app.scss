@@ -109,6 +109,10 @@ body {
     background: $colorFour;
   }
 
+  textarea{
+    resize: none;
+  }
+
 
   //----------------------------------------------------------------
 
@@ -136,7 +140,10 @@ body {
       display: none;
     }
 
-
+    .products_items{
+      width: 150px !important;
+      height: 250px !important;
+    }
 
   }
 //----------------------------------------------------------------
