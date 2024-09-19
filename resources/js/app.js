@@ -12,6 +12,7 @@ import TheCategoryList from './components/categories/TheCategoryList.vue'
 import ThePublicationList from './components/publications/ThePublicationList.vue'
 import viewMap  from './components/publications/viewMap.vue'
 import ShowProduct from './components/Products/showProduct.vue'
+import NavbarShop from './components/Products/NavbarShop.vue'
 import Cart from './components/cart/cart.vue'
 
 // import { component } from 'vue/types/umd'
@@ -25,7 +26,8 @@ const app = createApp({
 		ThePublicationList,
 		ShowProduct,
 		viewMap,
-		Cart
+		Cart,
+		NavbarShop,
 		
 	}
 })

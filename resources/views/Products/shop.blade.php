@@ -1,6 +1,8 @@
 <x-app title="Tienda electronica | home">
 
-    <x-menuShop />
+    <navbar-shop>
+    </navbar-shop>
+
     <img src="{{ asset('images/Logodecompras.jpg') }}" alt="banner"
         class="banner-img position-relative img-fluid w-100 p-0 m-0">
     @foreach ($categories as $cate)

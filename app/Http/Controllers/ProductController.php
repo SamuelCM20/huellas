@@ -65,10 +65,28 @@ class ProductController extends Controller
 
     public function search(Request $request)
     {
-        $query = $request->input('buscador');
-        $result = Product::with('file')->where('name','like','%'. $query . '%')->get();
-        $count = count($result);
-       return view('products.search', compact('result','query','count'));
+            $query = $request->input('buscador');
+        
+        if ($request->ajax()) {
+            $result = Product::with('file')
+                ->where('name', 'like', '%' . $query . '%')
+                ->get();
+    
+            return response()->json($result); 
+        }
+    
+        
+        $result = Product::with('file')
+            ->where('name', 'like', '%' . $query . '%')
+            ->get();
+        
+        $count = $result->count();
+        
+        return view('products.search', [
+            'query' => $query,
+            'result' => $result,
+            'count' => $count,
+        ]); 
     }
 
 
