@@ -29,18 +29,6 @@
 								</span>
 							</div>
 
-							<!-- number_id -->
-							<div class="col-12 mt-2">
-								<label for="number_id">Cedula</label>
-								<Field name="number_id" v-slot="{ errorMessage, field}" v-model="user.number_id">
-									<input type="number" id="title" v-model="user.number_id" :class="`form-control ${errorMessage ? 'is-invalid' : ''}`" v-bind="field">
-
-									<span class="invalid-feedback">{{errorMessage}}</span>
-									<span class="invalid-feedback">{{ back_errors['file'] }}</span>
-
-								</Field>
-							</div>
-
 							<!-- name -->
 							<div class="col-12 mt-2">
 								<label for="name">Nombre</label>
@@ -181,7 +169,6 @@ export default {
 
 
 				return yup.object({
-				number_id: yup.number('La cedula debe ser numerica').required('La cedula es requerida'),
 				name: yup.string('El nombre no es valido').required('El nombre es requerido').max(50, 'El nombre no debe exceder los 50 caracteres'),
 				last_name: yup.string('El apellido no es valido').required('El apellido es requerido').max(50, 'El apellido no debe exceder los 50 caracteres'),
 				phone: yup.number('El telefono debe ser un numero').required('El telefono es requerido'),

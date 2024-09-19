@@ -1,5 +1,5 @@
 <template>
-	<div class="card">
+	<div class="card my-5">
 		<div class="card-header d-flex justify-content-end">
 			<button class="btn btn-success" @click="openModal">Crear Usuarios</button>
 		</div>
@@ -9,7 +9,6 @@
 					<thead>
 						<tr>
 							<th>Avatar</th>
-							<th>Cedula</th>
 							<th>Nombre</th>
 							<th>Apellido</th>
 							<th>Correo</th>
@@ -20,7 +19,6 @@
 					<tbody>
 						<tr v-for="(user, index) in users" :key="index">
 							<td class="d-flex justify-content-center"><img :src ="user.file.route" alt="avatar de usuario" width="80"  height="80"></td>
-							<td>{{user.number_id}}</td>
 							<td>{{user.name}}</td>
 							<td>{{user.last_name}}</td>
 							<td>{{user.email}}</td>

@@ -14,7 +14,6 @@ class UserSeeder extends Seeder
     public function run()
     {
         $user = new User([
-            'number_id' => "187234566",
             'name' => "Samuel",
             'last_name' => "Caldon",
             'phone' => "123456789",

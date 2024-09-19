@@ -11,12 +11,7 @@
 						<hr> <!-- Línea horizontal debajo del nombre -->
 						<h5 class="text-start fw-bold">Información Básica</h5>
 						<div class="row text-start mt-3">
-							<div class="col-5">
-								<strong>Cédula:</strong> 
-							</div>
-							<div class="col-5">
-								<p>{{users.number_id}}</p>
-							</div>
+							
 							<div class="col-5">
 								<strong>Dirección:</strong>
 							</div>
