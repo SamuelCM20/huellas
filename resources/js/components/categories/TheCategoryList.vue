@@ -1,5 +1,5 @@
 <template>
-	<div class="card">
+	<div class="card my-5">
 		<div class="card-header d-flex justify-content-end">
 			<button class="btn btn-success" @click="openModal">Crear Categoria</button>
 		</div>

@@ -42,7 +42,7 @@
 
 							<!-- details -->
 							<div class="col-12 mt-2">
-								<label for="details">Detalles</label>
+								<label for="details">Detalles <span class="mx-1 text-danger" title="Aquí colocas las características principales que describen a tu producto"><i class="fa-solid fa-circle-info"></i></span></label>
 								<Field name="details" v-slot="{ errorMessage, field}" v-model="product.details">
 									<input type="text" id="details" v-model="product.details" :class="`form-control ${errorMessage ? 'is-invalid' : ''}`" v-bind="field">
 									<span class="invalid-feedback">{{errorMessage}}</span>
@@ -86,7 +86,7 @@
 							<!-- Stock -->
 							<div class="col-12 mt-2">
 								<Field name="stock" v-slot="{ errorMessage, field }" v-model="product.stock">
-									<label for="stock">Cantidad</label>
+									<label for="stock">Cantidad <span class="mx-1 text-danger" title="Este apartado será la cantidad de productos disponibles en stock."><i class="fa-solid fa-circle-info"></i></span></label>
 									<input type="number" id="stock" v-model="product.stock"
 										:class="`form-control ${errorMessage ? 'is-invalid' : ''}`" v-bind="field">
 									<span class="invalid-feedback">{{ errorMessage }}</span>
@@ -112,7 +112,7 @@
 
 					<!-- Buttons -->
 					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
 						<button type="sumbit" class="btn btn-primary">Almacenar</button>
 					</div>
 				</Form>

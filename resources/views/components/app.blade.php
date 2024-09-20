@@ -36,4 +36,15 @@
 	
 	</body>
 	<script src="{{ asset('js/localStorageUtils.js') }}"></script>
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			document.getElementById('contactForm').addEventListener('submit', function(event) {
+				Swal.fire({
+					icon: 'warning',
+					title: '¡Espera!',
+					text:  'Perdón, esta función no está disponible en este momento.'
+			})
+			} );
+		})
+	</script>
 </html>
