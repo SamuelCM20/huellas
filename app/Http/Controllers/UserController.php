@@ -94,7 +94,18 @@ class UserController extends Controller
 
     public function destroy(Request $request, User $user)
     {
+        foreach ($user->publication as $publication) {
+            // Elimina las coordenadas de cada publicación
+            $this->deleteFile($publication);
+            $publication->coordinate()->delete();
+            // Elimina la publicación
+            $publication->delete();
+        }
+    
+        // Eliminar suavemente el usuario
         $user->delete();
+    
+        // Elimina los archivos asociados al usuario
         $this->deleteFile($user);
         if (!$request->ajax()) return back()->with("success", 'User deleted');
         return response()->json([], 204);

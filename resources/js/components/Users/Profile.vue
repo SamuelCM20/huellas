@@ -111,17 +111,17 @@ export default {
 			if (!await deleteMessage()) return
 			try {
 				await axios.delete(`/publications/${postId}`)
-				this.deleteCoordinates(postId)
+				// this.deleteCoordinates(postId)
 				await successMessage({ is_delete: true, reload: true })
 				window.location.reload()
 			} catch (error) {
 				console.error('Error eliminando la publicación:', error);
 			}
 		},
-		async deleteCoordinates(postId) {
-			await axios.delete(`/coordinates/${postId}`);
-			console.log('deleting coordinates')
-		},
+		// async deleteCoordinates(postId) {
+		// 	await axios.delete(`/coordinates/${postId}`);
+		// 	console.log('deleting coordinates')
+		// },
 		truncateText(text, length) {
 			if (text.length > length) {
 				return text.substring(0, length) + '...';

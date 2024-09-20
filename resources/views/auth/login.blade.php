@@ -1,5 +1,5 @@
 <x-app title="Inicio de sesión">
-    <div class="ContainerPrimary d-flex justify-content-center align-items-center p-4">
+    <div class="ContainerPrimary d-flex justify-content-center align-items-center p-4 m-auto">
         <div class="card shadow p-4" style="max-width: 400px; width: 100%;">
             <div class="text-center">
                 <img src="{{asset('images/iconoCirculoVerde.png')}}" alt="Logo" class="mb-3" style="width: 80px;">

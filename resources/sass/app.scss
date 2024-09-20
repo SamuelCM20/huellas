@@ -65,6 +65,7 @@ body {
   }
   footer{
     background: $principalColor;
+    position: relative;
   }
 
   .button-success{
@@ -96,8 +97,13 @@ body {
     color: $principalColor;
   }
 
+  .defaultContainer{
+    background: #f3f3f3;
+  }
+
   .ContainerPrimary{
     background: $secundarioColor;
+    height: auto;
   }
 
   .publication-img{
@@ -144,8 +150,22 @@ body {
       width: 150px !important;
       height: 250px !important;
     }
+   
 
   }
+
+  @media (min-width: 768px) and (max-width: 1080px) {
+    .defaultContainer{
+      min-height: 100vh;
+    }
+    .ContainerPrimary{
+      min-height: 100vh;
+    }
+    .scrollable-content {
+      max-height: 100vh !important;
+  }
+  } 
+
 //----------------------------------------------------------------
 //Animations
 

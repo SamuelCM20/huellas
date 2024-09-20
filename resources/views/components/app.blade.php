@@ -20,7 +20,7 @@
 		<x-menu />
 
 		{{-- Content --}}
-		<main id="app" class="">
+		<main id="app">
 			<div class="container">
 				<x-alerts />
 			</div>
@@ -39,6 +39,7 @@
 	<script>
 		document.addEventListener('DOMContentLoaded', function() {
 			document.getElementById('contactForm').addEventListener('submit', function(event) {
+				event.preventDefault()
 				Swal.fire({
 					icon: 'warning',
 					title: '¡Espera!',
@@ -46,5 +47,24 @@
 			})
 			} );
 		})
-	</script>
+		function limitText(elements, limit) {
+            elements.forEach(function(element) {
+                var text = element.textContent;
+                if (text.length > limit) {
+                    element.textContent = text.substring(0, limit) + '...';
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var titles = document.querySelectorAll('.product-title');
+            var descriptions = document.querySelectorAll('.product-details');
+
+            // Limitar los títulos a 20 caracteres
+            limitText(titles, 20);
+
+            // Limitar las descripciones a 60 caracteres
+            limitText(descriptions, 30);
+        });
+    </script>
 </html>

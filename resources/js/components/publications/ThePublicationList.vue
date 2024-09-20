@@ -1,5 +1,5 @@
 <template>
-    <div class="row justify-content-center mx-4">
+    <div class="row justify-content-center">
         <div class="col-md-3 my-4 user_content">
             <div class="card">
                 <div class="card-body text-center">
@@ -119,7 +119,7 @@ export default {
 </script>
 <style scoped>
 .scrollable-content {
-    max-height: 600px;
+    max-height: 100vh;
     overflow-y: auto;
 }
 </style>

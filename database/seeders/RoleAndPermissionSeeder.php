@@ -14,19 +14,18 @@ class RoleAndPermissionSeeder extends Seeder
   {
     $freepermissions = [
       Permission::create(['name' =>'products.home' ]),
-      Permission::create(['name' => 'products.info',]),
-      Permission::create(['name' => 'products.search',]),
-      Permission::create(['name' => 'products.cart',]),
-      Permission::create(['name' => 'users.profile',]),
-      Permission::create(['name' => 'users.update',]),
-      Permission::create(['name' => 'categories.allProducts',]),
-      Permission::create(['name' => 'publications.index',]),
-      Permission::create(['name' => 'publications.store',]),
-      Permission::create(['name' => 'publications.destroy',]),
-      Permission::create(['name' => 'coordinates.index',]),
-      Permission::create(['name' => 'coordinates.store',]),
-      Permission::create(['name' => 'coordinates.destroy',]),
-
+      Permission::create(['name' => 'products.info']),
+      Permission::create(['name' => 'products.search']),
+      Permission::create(['name' => 'products.cart']),
+      Permission::create(['name' => 'users.profile']),
+      Permission::create(['name' => 'users.update']),
+      Permission::create(['name' => 'categories.allProducts']),
+      Permission::create(['name' => 'publications.index']),
+      Permission::create(['name' => 'publications.store']),
+      Permission::create(['name' => 'publications.destroy']),
+      Permission::create(['name' => 'coordinates.index']),
+      Permission::create(['name' => 'coordinates.store']),
+      Permission::create(['name' => 'coordinates.destroy']),
     ];
     $permissionsAdmin = array_merge( [
       Permission::create(['name'=>'users.index',]),

@@ -87,6 +87,8 @@ class PublicationController extends Controller
     public function destroy(Request $request, Publication $publication)
     {
         $publication->delete();
+        $publication->coordinate()->delete();
+        $this->deleteFile($publication);
         if (!$request->ajax()) return back()->with("success", 'Publication deleted');
         return response()->json([], 204);
     }

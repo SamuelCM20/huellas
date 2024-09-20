@@ -1,5 +1,5 @@
 <x-app title="Registrate">
-<div class="ContainerPrimary">
+<div class="ContainerPrimary ">
     <div class="d-flex justify-content-center p-5">
         <div class="col-md-6">
             <div class="card">

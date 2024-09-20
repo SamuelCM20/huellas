@@ -1,7 +1,7 @@
 <x-app title="{{$category->name}}">
 
-	<div class="my-3">
-		<div class="d-flex align-items-center justify-content-center">
+	<div class="defaultContainer my-5 ">
+		<div class="d-flex align-items-center justify-content-center ">
 			<h1 class="h2 m-3">Todo acerca de {{ $category->name }}</h1>
 		</div>
 		<div class="row justify-content-start gx-1 gy-2 m-3"> 

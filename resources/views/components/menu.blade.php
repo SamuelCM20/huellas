@@ -43,7 +43,7 @@
                                 <span class="user-name">{{ Auth::user()->name }}</span>
                                 <i class="fas fa-chevron-down ms-2 arrow-icon fs-6"></i>
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="{{ route('users.profile') }}">Perfil</a></li>
                                 @role('admin')
                                     <li><a class="dropdown-item" href="{{ route('users.index') }}">Usuarios</a></li>

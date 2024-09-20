@@ -30,7 +30,7 @@ class Publication extends Model
 
     public function coordinate()
     {
-        return $this->hasOne(Coordinate::class);
+        return $this->hasOne(Coordinate::class, 'post_id', 'id');
     }
     public function file()
     {

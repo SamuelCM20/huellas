@@ -1,7 +1,7 @@
 <template>
-    <div class="container my-4">
+    <div class="defaultContainer my-5">
       <!-- Mapa -->
-      <div class="row mb-3rounded">
+      <div class="row mb-3 rounded">
         <div class="col-12 ">
           <div id="map" class="shadow" style="height: 400px;"></div>
         </div>

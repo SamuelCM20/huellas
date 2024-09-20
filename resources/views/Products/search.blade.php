@@ -1,5 +1,5 @@
 <x-app title="Resultados para {{ $query }}">
-
+    <div class="defaultContainer">
     <navbar-shop>
     </navbar-shop>
 

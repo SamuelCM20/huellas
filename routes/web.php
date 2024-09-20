@@ -25,7 +25,7 @@ Route::group(['middleware' => ['auth']], function () {
 Route::get('/profile',[UserController::class, 'profile'])->name('users.profile')->middleware('can:users.profile');
 
 
-Route::group(['prefix' => 'users','middleware' =>['role:admin'],'controller'=>UserController::class], function () {
+Route::group(['prefix' => 'users','controller'=>UserController::class], function () {
 	Route::get('/','index')->name('users.index')->middleware('can:users.index');
 	Route::get('/show/{user}', 'show')->name('users.show')->middleware('can:users.show');
 	Route::post('/store', 'store')->name('users.store')->middleware('can:users.store');
