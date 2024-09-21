@@ -14,12 +14,12 @@ class UserSeeder extends Seeder
     public function run()
     {
         $user = new User([
-            'name' => "Samuel",
-            'last_name' => "Caldon",
-            'phone' => "123456789",
+            'name' => "admin",
+            'last_name' => "super",
+            'phone' => "3122222222",
             'address' => "cra 1 con 12-21 ",
-            'email' => "samuel@gmail.com",
-            'password' => 'samuel123',
+            'email' => "admin@gmail.com",
+            'password' => 'admin123',
             'remember_token' => Str::random(10),
         ]);
         $user->save();

@@ -28,7 +28,7 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
-    protected function register(RegisterRequest $request)
+    protected function register(UserRequest $request)
     {
         $user = new User($request->all());
         $user->save();

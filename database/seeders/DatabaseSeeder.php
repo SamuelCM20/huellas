@@ -16,8 +16,7 @@ class DatabaseSeeder extends Seeder
             RoleAndPermissionSeeder::class,
             UserSeeder::class,
             CategorySeeder::class,
+            ProductSeeder::class,
         ]);
-        User::factory(10)->create();
-        Product::factory(10)->create();
     }
 }
