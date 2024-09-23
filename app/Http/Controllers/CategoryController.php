@@ -24,11 +24,17 @@ class CategoryController extends Controller
    
     public function store(CategoryRequest $request)
     {
-        $category = new Category($request->all());
-        $category ->save();
+        $deletedCategory = Category::withTrashed()->where('name', $request->name)->first();
 
-        if(!$request->ajax()) return back()->with("success",'Category created');
-        return response()->json(['status' => 'Category created'],201);
+        if ($deletedCategory) {
+            $deletedCategory->restore();
+            return back()->with("success",'Category Restored');
+        }
+            $category = new Category($request->all());
+            $category ->save();
+            
+            if(!$request->ajax()) return back()->with("success",'Category created');
+            return response()->json(['status' => 'Category created'],201);
     }
 
   

@@ -18,9 +18,11 @@ class ProductController extends Controller
 
     public function home(Request $request)
     {
-        $categories = Category::has('products')->get();
+        $categories = Category::whereHas('products', function ($query) {
+            $query->where('stock', '>', 0);
+         })->get();
         $products = Product::with('category', 'file')
-            ->whereHas('category')
+            ->whereHas('category')  
             ->where('stock', '>', 0)
             ->get();
         if (!$request->ajax()) return view('products.shop', compact('products', 'categories'));
@@ -38,6 +40,8 @@ class ProductController extends Controller
 
     public function store(ProductRequest $request)
     {
+
+        dd($request->toArray());
         $Isfile = true;
         if (!$request->hasFile('file')) {
             unset($request['file']);

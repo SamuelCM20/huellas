@@ -26,7 +26,7 @@ class ProductRequest extends FormRequest
     public function rules()
     {
 
-        $this->rules['file'] = ['nullable', 'image'];
+        $this->rules['file'] = ['nullable','image','mimes:jpeg,png,jpg,gif','max:2048'];
 
         if (!$this->hasFile('file')) {
             $this->rules['file'] = ['nullable'];
@@ -57,7 +57,9 @@ class ProductRequest extends FormRequest
            'stock.numeric' => 'El stock debe ser un número',
            'stock.digits_between' => 'El stock debe tener entre 1 y 10 dígitos',
             'category_id.required' => 'La categoría es requerida',
-            'category_id.numeric' => 'La categoría debe ser un número'
+            'category_id.numeric' => 'La categoría debe ser un número',
+            'file.image' => 'El archivo debe ser una imagen',
+            'file.max' => 'El archivo no puede superar los 2MB'
 
         ];
         

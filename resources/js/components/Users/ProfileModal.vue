@@ -71,7 +71,7 @@
 
 import { Field, Form } from 'vee-validate'
 import * as yup from 'yup'
-import { successMessage, handlerErrors } from '@/helpers/Alert.js'
+import { successMessage, handlerErrors,imagenNoValida } from '@/helpers/Alert.js'
 import BackendError from '../Components/BackendError.vue'
 
 export default {
@@ -89,7 +89,7 @@ export default {
             return yup.object({
                 name: yup.string('el nombre debe ser una cadena de texto valida').required('el nombre es requerido').max(50,"El nombre no debe exceder los 50 caracteres"),
                 last_name: yup.string('el apellido debe ser una cadena de texto valida').required('el apellido es requerido').max(50,"El apellido no debe exceder los 50 caracteres"),
-                phone: yup.number('el telefono solo debe contener numeros').required('el numero celular es requerido'),
+                phone: yup.number('el telefono solo debe contener numeros').required('el numero celular es requerido').typeError('El numero de celular debe ser un número válido para colombia.'),
                 address: yup.string('la direccion debe ser una cadena de texto valida').required('la dirección es requerido').max(100,"La dirección no debe exceder los 50 caracteres"),
             });
         },
@@ -109,8 +109,19 @@ export default {
     methods: {
         index() { },
         previewImage(event) {
-            this.file = event.target.files[0]
-            this.image_preview = URL.createObjectURL(this.file)
+            const file = event.target.files[0];
+
+			const maxSize = 5 * 1024 * 1024; // 2 MB
+			if (file && file.size > maxSize) {
+				imagenNoValida()
+				this.file = null; // Reiniciar el archivo si no es válido
+				this.image_preview = '/storage/images/users/default.png'; // Reiniciar la imagen previa
+				event.target.value = ''; // Limpiar el input
+				return;
+			}
+
+			this.file = file;
+			this.image_preview = URL.createObjectURL(file);
         },
         async saveUser() {
             try {

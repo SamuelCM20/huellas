@@ -18,7 +18,7 @@ class PublicationController extends Controller
     public function index(Request $request)
     {
         $user = Auth::user();
-        $user = User::with('file')->find($user->id);
+        $user = User::with('file','roles')->find($user->id);
         $user->full_name = $user->full_name;
         $postCount = Publication::where('user_id',$user->id)->count();
         $publications = Publication::with('user.file', 'file')->get();

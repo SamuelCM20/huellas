@@ -13,7 +13,7 @@ class UserRequest extends FormRequest
         'phone' => ['required', 'numeric','min:3','digits:10'],
         'address' => ['required', 'string','min:3','max:100'],
         'email' => ['required', 'email', 'unique:users,email','min:3','max:50'],
-        'password' => ['required', 'confirmed', 'string', 'min:8', 'regex:/[a-zA-Z]/', 
+        'password' => ['required', 'confirmed', 'string', 'min:8','max:100', 'regex:/[a-zA-Z]/', 
         'regex:/[0-9]/'],        
     ];
     public function authorize()
@@ -65,6 +65,7 @@ class UserRequest extends FormRequest
             'password.string' => 'La contraseña debe ser valida',
             'password.regex' => 'La contraseña debe tener al menos una letra mayúscula, una letra minúscula y un número',  // regex pattern for password validation
             'password.min' => 'La contraseña debe tener al menos 8 caracteres',
+            'password.max' => 'La contraseña no debe superar los 100 caracteres',
             'role.required' => 'El rol es requerido',
             'role.string' => 'El rol debe ser valido',
             'role.in' => 'El rol debe ser user o admin',
