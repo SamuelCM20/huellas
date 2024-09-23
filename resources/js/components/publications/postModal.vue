@@ -98,7 +98,7 @@
 <script>
 import { Field, Form } from 'vee-validate'
 import * as yup from 'yup'
-import { successMessage, handlerErrors } from '@/helpers/Alert.js'
+import { successMessage, handlerErrors, imagenNoValida } from '@/helpers/Alert.js'
 import BackendError from '../Components/BackendError.vue'
 import L from 'leaflet'
 
@@ -142,8 +142,19 @@ export default {
     methods: {
         index() { },
         previewImage(event) {
-            this.file = event.target.files[0]
-            this.image_preview = URL.createObjectURL(this.file)
+            const file = event.target.files[0];
+
+			const maxSize = 5 * 1024 * 1024; // 2 MB
+			if (file && file.size > maxSize) {
+				imagenNoValida()
+				this.file = null; // Reiniciar el archivo si no es válido
+				this.image_preview = '/storage/images/publications/default.jpeg'; // Reiniciar la imagen previa
+				event.target.value = ''; // Limpiar el input
+				return;
+			}
+
+			this.file = file;
+			this.image_preview = URL.createObjectURL(file);
         },
         async savePost() {
             

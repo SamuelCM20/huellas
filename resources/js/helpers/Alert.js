@@ -74,3 +74,11 @@ export const noDisponible = async () => {
 			
 	})
 }
+export const imagenNoValida = async () => {
+	 await Swal.fire({
+		icon: 'warning',
+		title: '¡Espera!',
+		text:  'La imagen ingresada no puede superar los 5MB.'
+			
+	})
+}

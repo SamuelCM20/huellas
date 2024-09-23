@@ -40,6 +40,10 @@
                             <span class="username font-weight-bold fs-5">{{ publication.user.name }}</span>
                             <span class="publication-date text-muted d-block">{{ publication.created_at }}</span>
                         </div>
+                        <a href="#" class="ms-auto fs-1 text-danger" v-if="isAdmin(user)" title="Eliminar Publicacion"  @click="deletePublication(publication.id)" >
+                            <i class="fa-solid fa-circle-minus"></i>
+                        </a>
+                        
                     </div>
                     <p class="card-text">{{ publication.description }}</p>
                     <img :src="publication.file && publication.file.route ? publication.file.route : '/storage/images/publications/default.jpeg'"
@@ -59,9 +63,9 @@
 
 
 <script>
-import { successMessage } from '../../helpers/Alert';
+// import { successMessage } from '../../helpers/Alert';
 import postModal from './postModal.vue';
-import { deleteMessage } from '@/helpers/Alert.js';
+import { successMessage , deleteMessage } from '@/helpers/Alert.js';
 
 export default {
     components: { postModal },
@@ -93,7 +97,6 @@ export default {
     },
     methods: {
         async index() {
-            console.log(this.publications.id)
             const modal_id = document.getElementById('post_modal')
             this.modal = new bootstrap.Modal(modal_id)
             modal_id.addEventListener('hidden.bs.modal', e => {
@@ -102,6 +105,12 @@ export default {
             modal_id.addEventListener('show.bs.modal', e => {
                 this.$refs.post_modal.initMap()
             })
+        },
+        isAdmin(user) {
+            return user.roles.some(role => role.name === 'admin');
+        },
+        getUserRole(user) {
+            return user.roles.length ? user.roles[0].name : 'Sin Rol';
         },
         openModal() {
             this.modal.show()
@@ -114,6 +123,16 @@ export default {
                 console.error('Error al obtener coordenadas:', error);
             }
         },
+        async deletePublication(postId) {
+			if (!await deleteMessage()) return
+			try {
+				await axios.delete(`/publications/${postId}`)
+				await successMessage({ is_delete: true, reload: true })
+				window.location.reload()
+			} catch (error) {
+				console.error('Error eliminando la publicación:', error);
+			}
+		},
     }
 };
 </script>
