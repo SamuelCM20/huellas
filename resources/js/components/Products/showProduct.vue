@@ -9,7 +9,7 @@
 							<img :src="product.file.route" alt="Producto" class="img-fluid rounded" width="300" height="300">
 						</div>
 						<hr>
-						<h1 class="h3 my-3">Descripicion:</h1>
+						<h1 class="h3 my-3">Descripción:</h1>
 
 						<p class="">{{product.description}}</p>
 				</div>

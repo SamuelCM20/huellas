@@ -41,7 +41,6 @@ class ProductController extends Controller
     public function store(ProductRequest $request)
     {
 
-        dd($request->toArray());
         $Isfile = true;
         if (!$request->hasFile('file')) {
             unset($request['file']);

@@ -50,28 +50,28 @@
                             <div class="accordion-body">
                                 <ul>
                                     <li class="d-flex align-items-center mb-2">
-                                        <img src="" alt="Sebastian" class="rounded-circle me-2" style="width: 40px; height: 40px;">
-                                        <strong>Sebastián Uscategui Mahecha</strong> - Lider del proyecto.
+                                        <img src="{{ asset('images/sebastian.jpg') }}" alt="Sebastian" class="rounded-circle me-2 img-fluid" style="width: 50px; height: 50px;">
+                                        <strong>Sebastián Uscategui Mahecha</strong> - Gerente.
                                       </li>
                                       <li class="d-flex align-items-center mb-2">
-                                        <img src="" alt="Maria" class="rounded-circle me-2" style="width: 40px; height: 40px;">
-                                        <strong>Maria Camila Urbano Aragón</strong> - Miembro del proyecto.
+                                        <img src="{{ asset('images/camila.jpg') }}" alt="Maria" class="rounded-circle me-2 img-fluid" style="width: 50px; height: 50px;">
+                                        <strong>Maria Camila Urbano Aragón</strong> - Contador.
                                       </li>
                                       <li class="d-flex align-items-center mb-2">
-                                        <img src="" alt="Juan" class="rounded-circle me-2" style="width: 40px; height: 40px;">
-                                        <strong>Juan Pablo García Rueda</strong> - Miembro del proyecto.
+                                        <img src="{{ asset('images/hombre.png') }}" alt="Juan" class="rounded-circle me-2" style="width: 50px; height: 50px;">
+                                        <strong>Juan Pablo García Rueda</strong> - Ingeniero en sistemas.
                                       </li>
                                       <li class="d-flex align-items-center mb-2">
-                                        <img src="" alt="Yesly" class="rounded-circle me-2" style="width: 40px; height: 40px;">
-                                        <strong>Yesly Valeria Ordoñez Restrepo</strong> - Miembro del proyecto.
+                                        <img src="{{ asset('images/yesly.jpg') }}" alt="Yesly" class="rounded-circle me-2 img-fluid" style="width: 50px; height: 50px;">
+                                        <strong>Yesly Valeria Ordoñez Restrepo</strong> - Comunicación y Marketing.
                                       </li>
                                       <li class="d-flex align-items-center mb-2">
-                                        <img src="" alt="Angel" class="rounded-circle me-2" style="width: 40px; height: 40px;">
-                                        <strong>Ángel Daniel Ruíz Pastrana</strong> - Miembro del proyecto.
+                                        <img src="{{ asset('images/angel.jpg') }}" alt="Angel" class="rounded-circle me-2" style="width: 50px; height: 50px;">
+                                        <strong>Ángel Daniel Ruíz Pastrana</strong> - Web máster.
                                       </li>
                                       <li class="d-flex align-items-center mb-2">
-                                        <img src="" alt="Luis" class="rounded-circle me-2" style="width: 40px; height: 40px;">
-                                        <strong>Luis Ángel Rentería Rodríguez</strong> - Miembro del proyecto.
+                                        <img src="{{ asset('images/Tino.jpg') }}" alt="Luis" class="rounded-circle me-2" style="width: 50px; height: 50px;">
+                                        <strong>Luis Ángel Rentería Rodríguez</strong> - Bienestar animal.
                                       </li>
                             
                                   </ul>

@@ -1,8 +1,8 @@
 <div class="row p-0 w-100 m-0 bg-light" id="contactanos">
     <div class="text-center my-2 d-flex flex-column align-items-center">
         <h2 class="subtitle-main text-uppercase">contáctanos</h2>
-        <h3 class="title-main fs-2 w-75 fw-bold">Si quieres ponerte en contacto con nosotros hazlo
-            a través del formulario de contacto</h3>
+        <h3 class="title-main fs-2 w-75 fw-bold">Si quieres ponerte en contacto con nosotros,
+             hazlo a través del formulario de contacto</h3>
     </div>
 
     <!-- Formulario e Imagen -->

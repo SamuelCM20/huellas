@@ -11,7 +11,7 @@ class ProductRequest extends FormRequest
         'name' => ['required', 'string','max:50'],
         'details' => ['required', 'string','max:50'],
         'price' => ['required', 'numeric','digits_between:1,10','regex:/^\d{1,10}$/'],
-        'shipping_cost' => ['numeric','digits_between:1,10','regex:/^\d{1,10}$/'],
+        'shipping_cost' => ['nullable','numeric','digits_between:1,10','regex:/^\d{1,10}$/'],
         'description' => ['nullable', 'string','min:10','max:100'],
         'stock' => ['required', 'numeric','digits_between:1,10'],
         'category_id' => ['required', 'numeric']

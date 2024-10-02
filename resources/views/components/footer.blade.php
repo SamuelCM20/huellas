@@ -21,7 +21,7 @@
           <ul class="list-inline">
             <li class="list-inline-item mx-3">
               <a href="#" class="text-white">
-                <i class="fa-brands fa-facebook fs-2"></i>
+                <i class="fa-brands fa-whatsapp fs-2"></i>
               </a>
             </li>
             <li class="list-inline-item mx-3">

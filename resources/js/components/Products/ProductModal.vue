@@ -69,10 +69,12 @@
 
 							<!-- shipping_cost -->
 							<div class="col-12 mt-2">
-								<label for="shipping_cost">Costo de envio</label>
+								<label for="shipping_cost">Costo de envío <span class="mx-1 text-danger"
+										title="Costo de envío es opcional si el usuario asi lo desea, colocar 0 si no se desea costo de envío"><i
+											class="fa-solid fa-circle-info"></i></span></label>
 								<Field name="shipping_cost" v-slot="{ errorMessage, field }"
 									v-model="product.shipping_cost">
-									<input type="text" id="shipping_cost" v-model="product.shipping_cost"
+									<input type="number" id="shipping_cost" v-model="product.shipping_cost"
 										:class="`form-control ${errorMessage ? 'is-invalid' : ''}`" v-bind="field"
 										placeholder="Da un costo para el envio(opcional)">
 									<span class="invalid-feedback">{{ errorMessage }}</span>

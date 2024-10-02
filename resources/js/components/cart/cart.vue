@@ -1,5 +1,5 @@
 <template>
-        <div class="row p-5">
+        <div class="row p-5 w-100">
             <!-- Columna izquierda: Carrito -->
             <div class="card col-lg-8">
 					<h1 class="h1 m-2">Carrito</h1>
@@ -65,7 +65,7 @@ import {
 } from "@/helpers/LocalStorage";
 
 import { ref, onMounted } from "vue";
-import { noDisponible } from '../../helpers/Alert';
+import { compraExitosa } from '../../helpers/Alert';
 
 const props = defineProps(["user"]);
 
@@ -128,8 +128,11 @@ const cleanCart = (productId) => {
 		total.value = 0;
 	};
 
-const buyAlert = () => {
-		noDisponible()
+const buyAlert = async () => {
+
+	if (!products.value.length) return;
+		await compraExitosa()
+		window.location.href = "/products/shop";
 	};
 
 onMounted(() => index());

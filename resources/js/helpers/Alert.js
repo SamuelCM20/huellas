@@ -74,6 +74,14 @@ export const noDisponible = async () => {
 			
 	})
 }
+export const compraExitosa = async () => {
+	 await Swal.fire({
+		icon: 'success',
+		title: '¡Compra realizada!',
+		text:  'El producto se enviara a su dirección.'
+			
+	})
+}
 export const imagenNoValida = async () => {
 	 await Swal.fire({
 		icon: 'warning',
