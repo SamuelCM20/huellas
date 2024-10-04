@@ -37,16 +37,6 @@
 	</body>
 	<script src="{{ asset('js/localStorageUtils.js') }}"></script>
 	<script>
-		document.addEventListener('DOMContentLoaded', function() {
-			document.getElementById('contactForm').addEventListener('submit', function(event) {
-				event.preventDefault()
-				Swal.fire({
-					icon: 'warning',
-					title: '¡Espera!',
-					text:  'Perdón, esta función no está disponible en este momento.'
-			})
-			} );
-		})
 		function limitText(elements, limit) {
             elements.forEach(function(element) {
                 var text = element.textContent;
@@ -65,6 +55,18 @@
 
             // Limitar las descripciones a 60 caracteres
             limitText(descriptions, 30);
+
+
+			@if(session('success'))
+       		 Swal.fire({
+            icon: 'success',
+            title: '¡Mensaje enviado!',
+            text: '{{ session('success') }}',
+            confirmButtonText: 'Aceptar',
+            confirmButtonColor: '#007bff',
+            timer: 3000
+        });
+    @endif
         });
     </script>
 </html>

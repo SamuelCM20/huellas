@@ -9,20 +9,22 @@
     <div class="row justify-content-center align-items-center my-5">
         <!-- Formulario de contacto -->
         <div class="col-lg-4 col-md-6 col-12">
-            <form id="contactForm">
+            <form id="contactForm" action="{{route('contact.send')}}" method="POST">
+                @csrf
                 <div class="mb-3">
                     <label for="name" class="form-label fs-4">Nombres y apellidos</label>
-                    <input type="text" class="form-control shadow-sm" id="name"
-                        placeholder="Tu nombre y apellidos">
+                    <input type="text" class="form-control shadow-sm" id="name" name="name"
+                        placeholder="Tu nombre y apellidos" required>
                 </div>
                 <div class="mb-3">
                     <label for="email" class="form-label fs-4">Correo electrónico</label>
-                    <input type="email" class="form-control shadow-sm" id="email"
-                        placeholder="Tu correo electrónico">
+                    <input type="email" class="form-control shadow-sm" id="email" name="email"
+                        placeholder="Tu correo electrónico" required>
                 </div>
                 <div class="mb-3">
                     <label for="message" class="form-label fs-4">Mensaje</label>
-                    <textarea class="form-control shadow-sm" id="message" rows="4" placeholder="Tu mensaje"></textarea>
+                    <textarea class="form-control shadow-sm" id="message" name="message" rows="4" placeholder="Tu mensaje" required
+                    ></textarea>
                 </div>
                 <button type="submit" class="btn button-success w-100">Enviar</button>
             </form>

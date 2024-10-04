@@ -2,13 +2,16 @@
 
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ContacController;
 use App\Http\Controllers\CoordinateController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PublicationController;
 use App\Http\Controllers\UserController;
+use App\Mail\contactMailable;
 use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 Auth::routes();
@@ -67,4 +70,7 @@ Route::group(['prefix' => 'coordinates','controller'=>CoordinateController::clas
 	// Route::put('/{publication}', 'update')->name('publications.update');
 	Route::delete('/{post_id}', 'destroy')->name('coordinates.destroy')->middleware('can:coordinates.destroy');
 });
+
+
+Route::post('/contact/send', [ContacController::class, 'send'])->name('contact.send');
 });
